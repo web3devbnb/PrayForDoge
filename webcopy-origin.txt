@@ -1,0 +1,648 @@
+Uri: https://dogefarm.io/
+File Name: C:\Downloaded Web Sites\dogefarm.io\index.htm
+Content Type: text/html
+
+Uri: https://dogefarm.io/area.css
+File Name: C:\Downloaded Web Sites\dogefarm.io\area.css
+Content Type: text/css
+
+Uri: https://dogefarm.io/assets/css/all.min.css
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\css\all.min.css
+Content Type: text/css
+
+Uri: https://dogefarm.io/assets/css/animate.css
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\css\animate.css
+Content Type: text/css
+
+Uri: https://dogefarm.io/assets/css/bootstrap.min.css
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\css\bootstrap.min.css
+Content Type: text/css
+
+Uri: https://dogefarm.io/assets/css/ico-moon-fonts.css
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\css\ico-moon-fonts.css
+Content Type: text/css
+
+Uri: https://dogefarm.io/assets/css/magnific-popup.css
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\css\magnific-popup.css
+Content Type: text/css
+
+Uri: https://dogefarm.io/assets/css/off-canvas.css
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\css\off-canvas.css
+Content Type: text/css
+
+Uri: https://dogefarm.io/assets/css/owl.carousel.css
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\css\owl.carousel.css
+Content Type: text/css
+
+Uri: https://dogefarm.io/assets/css/responsive.css
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\css\responsive.css
+Content Type: text/css
+
+Uri: https://dogefarm.io/assets/css/sc-spacing.css
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\css\sc-spacing.css
+Content Type: text/css
+
+Uri: https://dogefarm.io/assets/css/slick-theme.min.css
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\css\slick-theme.min.css
+Content Type: text/css
+
+Uri: https://dogefarm.io/assets/css/slick.css
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\css\slick.css
+Content Type: text/css
+
+Uri: https://dogefarm.io/assets/css/style.css
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\css\style.css
+Content Type: text/css
+
+Uri: https://dogefarm.io/assets/fonts/icomoon.eot?1o95z7
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\fonts\icomoon.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://dogefarm.io/assets/fonts/icomoon.svg?1o95z7
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\fonts\icomoon.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/fonts/icomoon.ttf?1o95z7
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\fonts\icomoon.ttf
+Content Type: application/x-font-ttf
+
+Uri: https://dogefarm.io/assets/fonts/icomoon.woff?1o95z7
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\fonts\icomoon.woff
+Content Type: application/font-woff
+
+Uri: https://dogefarm.io/assets/fonts/slick.eot
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\fonts\slick.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://dogefarm.io/assets/fonts/slick.eot?
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\fonts\slick-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://dogefarm.io/assets/fonts/slick.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\fonts\slick.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/fonts/slick.ttf
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\fonts\slick.ttf
+Content Type: application/x-font-ttf
+
+Uri: https://dogefarm.io/assets/fonts/slick.woff
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\fonts\slick.woff
+Content Type: application/font-woff
+
+Uri: https://dogefarm.io/assets/images/ajax-loader.gif
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\ajax-loader.gif
+Content Type: image/gif
+
+Uri: https://dogefarm.io/assets/images/backend-dev.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\backend-dev.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/bg/banner-bg.jpg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\banner-bg.jpg
+Content Type: image/jpeg
+
+Uri: https://dogefarm.io/assets/images/bg/bgV2.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\bgV2.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/bg/breadcrumbs-bg.jpg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\breadcrumbs-bg.jpg
+Content Type: image/jpeg
+
+Uri: https://dogefarm.io/assets/images/bg/breadcrumbs-bg2.jpg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\breadcrumbs-bg2.jpg
+Content Type: image/jpeg
+
+Uri: https://dogefarm.io/assets/images/bg/footer-bg.jpg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\footer-bg.jpg
+Content Type: image/jpeg
+
+Uri: https://dogefarm.io/assets/images/bg/header-shape1.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\header-shape1.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/bg/header-shape2.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\header-shape2.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/bg/home4BG.jpg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\home4BG.jpg
+Content Type: image/jpeg
+
+Uri: https://dogefarm.io/assets/images/bg/lq_fleep_card_blur_img.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\lq_fleep_card_blur_img.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/bg/project-bg.jpg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\project-bg.jpg
+Content Type: image/jpeg
+
+Uri: https://dogefarm.io/assets/images/bg/project-bg.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\project-bg.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/bg/project-details-banner.jpg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\project-details-banner.jpg
+Content Type: image/jpeg
+
+Uri: https://dogefarm.io/assets/images/bg/ProjectClasic_sliderBg.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\ProjectClasic_sliderBg.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/bg/RoadMapV2Fram.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\RoadMapV2Fram.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/bg/RoadMapV2Frame2.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\RoadMapV2Frame2.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/bg/roadMap_Line.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\roadMap_Line.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/bg/shape-bg.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\shape-bg.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/bg/shapeBgV2.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\shapeBgV2.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/bg/staking_flip_card_blur_img.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\staking_flip_card_blur_img.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/bg/team-bg.jpg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\team-bg.jpg
+Content Type: image/jpeg
+
+Uri: https://dogefarm.io/assets/images/bg/TvlBg1.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\TvlBg1.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/bg/TvlBg2.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\TvlBg2.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/bg/TvlBg3.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\TvlBg3.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/bg/TvlBg4.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\TvlBg4.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/bg/V3_Banner_BG.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\bg\V3_Banner_BG.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/block-dev.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\block-dev.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/blog/block-code.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\blog\block-code.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/blog/blog-bg.jpg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\blog\blog-bg.jpg
+Content Type: image/jpeg
+
+Uri: https://dogefarm.io/assets/images/ceo.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\ceo.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/cfo.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\cfo.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/cmo.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\cmo.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/coo.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\coo.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/cto.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\cto.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/dogedrop.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\dogedrop.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/fav.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\fav.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/front-dev-1.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\front-dev-1.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/front-dev-2.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\front-dev-2.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/game-dev.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\game-dev.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/homeV2/buyTokenlogo1.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\homeV2\buyTokenlogo1.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/homeV2/buyTokenlogo3.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\homeV2\buyTokenlogo3.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/homeV2/buyTokenlogo4.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\homeV2\buyTokenlogo4.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/homeV2/center.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\homeV2\center.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/homeV2/piechart.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\homeV2\piechart.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/homeV2/rocketStar.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\homeV2\rocketStar.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/icons/Change_Slide_arrow.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\Change_Slide_arrow.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/icons/clock.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\clock.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/icons/connect.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\connect.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/icons/connect_white.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\connect_white.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/icons/copy_icon_gray.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\copy_icon_gray.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/icons/gate.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\gate.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/icons/governance_copy.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\governance_copy.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/icons/icon-Check.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\icon-Check.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/icons/icon-image.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\icon-image.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/icons/Key_icon1.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\Key_icon1.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/icons/Key_icon2.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\Key_icon2.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/icons/Key_icon3.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\Key_icon3.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/icons/Key_icon4.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\Key_icon4.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/icons/market.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\market.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/icons/meta-mask.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\meta-mask.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/icons/pancake.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\pancake.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/icons/roadmapChackicon.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\roadmapChackicon.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/icons/steps.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\steps.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/icons/steps2.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\steps2.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/icons/stone1.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\stone1.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/icons/stone2.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\stone2.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/icons/stone3.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\stone3.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/icons/user-octagon.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\icons\user-octagon.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/kycimg/BlurShadow.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\kycimg\BlurShadow.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/kycimg/munies.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\kycimg\munies.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/kycimg/RMcheckicon.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\kycimg\RMcheckicon.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/kycimg/Roadmap2021.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\kycimg\Roadmap2021.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/kycimg/Roadmap2022.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\kycimg\Roadmap2022.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/kycimg/roadMapcpntentBg1.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\kycimg\roadMapcpntentBg1.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/kycimg/roadMapcpntentBg2.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\kycimg\roadMapcpntentBg2.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/kycimg/roadMapcpntentBg3.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\kycimg\roadMapcpntentBg3.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/kycimg/roadMapcpntentBg4.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\kycimg\roadMapcpntentBg4.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/kycimg/roadMapcpntentBg5.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\kycimg\roadMapcpntentBg5.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/kycimg/roadMapcpntentBg6.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\kycimg\roadMapcpntentBg6.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/kycimg/roadMapcpntentBg7.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\kycimg\roadMapcpntentBg7.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/kycimg/roadmapScreenbg.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\kycimg\roadmapScreenbg.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/kycimg/signUpBgimage.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\kycimg\signUpBgimage.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/logo-dark.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\logo-dark.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/logo.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\logo.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/nft-maker.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\nft-maker.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/project/baby.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\project\baby.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/project/dof.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\project\dof.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/project/doge.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\project\doge.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/images/project/shapeTimerBg.svg
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\project\shapeTimerBg.svg
+Content Type: image/svg+xml
+
+Uri: https://dogefarm.io/assets/images/sol-dev.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\images\sol-dev.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/assets/js/bootstrap.min.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\bootstrap.min.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/js/custom/home2.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\custom\home2.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/js/imagesloaded.pkgd.min.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\imagesloaded.pkgd.min.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/js/jquery.counterup.min.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\jquery.counterup.min.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/js/jquery.magnific-popup.min.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\jquery.magnific-popup.min.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/js/jquery.min.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\jquery.min.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/js/main.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\main.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/js/metamask.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\metamask.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/js/metamaskhandler.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\metamaskhandler.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/js/modernizr-2.8.3.min.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\modernizr-2.8.3.min.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/js/owl.carousel.min.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\owl.carousel.min.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/js/plugins.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\plugins.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/js/slick.min.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\slick.min.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/js/time-counter.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\time-counter.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/js/waypoints.min.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\waypoints.min.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/js/web3.min.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\web3.min.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/js/wow.min.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\js\wow.min.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/assets/webfonts/fa-brands-400.ttf
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\webfonts\fa-brands-400.ttf
+Content Type: application/x-font-ttf
+
+Uri: https://dogefarm.io/assets/webfonts/fa-brands-400.woff2
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\webfonts\fa-brands-400.woff2
+Content Type: font/woff2
+
+Uri: https://dogefarm.io/assets/webfonts/fa-regular-400.ttf
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\webfonts\fa-regular-400.ttf
+Content Type: application/x-font-ttf
+
+Uri: https://dogefarm.io/assets/webfonts/fa-regular-400.woff2
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\webfonts\fa-regular-400.woff2
+Content Type: font/woff2
+
+Uri: https://dogefarm.io/assets/webfonts/fa-solid-900.ttf
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\webfonts\fa-solid-900.ttf
+Content Type: application/x-font-ttf
+
+Uri: https://dogefarm.io/assets/webfonts/fa-solid-900.woff2
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\webfonts\fa-solid-900.woff2
+Content Type: font/woff2
+
+Uri: https://dogefarm.io/assets/webfonts/fa-v4compatibility.ttf
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\webfonts\fa-v4compatibility.ttf
+Content Type: application/x-font-ttf
+
+Uri: https://dogefarm.io/assets/webfonts/fa-v4compatibility.woff2
+File Name: C:\Downloaded Web Sites\dogefarm.io\assets\webfonts\fa-v4compatibility.woff2
+Content Type: font/woff2
+
+Uri: https://dogefarm.io/back.png
+File Name: C:\Downloaded Web Sites\dogefarm.io\back.png
+Content Type: image/png
+
+Uri: https://dogefarm.io/backers.php
+File Name: C:\Downloaded Web Sites\dogefarm.io\backers.php.html
+Content Type: text/html
+
+Uri: https://dogefarm.io/css/easy-loading.css
+File Name: C:\Downloaded Web Sites\dogefarm.io\css\easy-loading.css
+Content Type: text/css
+
+Uri: https://dogefarm.io/css/zoom-marker.css
+File Name: C:\Downloaded Web Sites\dogefarm.io\css\zoom-marker.css
+Content Type: text/css
+
+Uri: https://dogefarm.io/index.php
+File Name: C:\Downloaded Web Sites\dogefarm.io\index.php.html
+Content Type: text/html
+
+Uri: https://dogefarm.io/js/easy-loading.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\js\easy-loading.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/js/hammer.min.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\js\hammer.min.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/js/jquery-3.3.1.min.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\js\jquery-3.3.1.min.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/js/jquery.mousewheel.min.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\js\jquery.mousewheel.min.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/js/zoom-marker.min.js
+File Name: C:\Downloaded Web Sites\dogefarm.io\js\zoom-marker.min.js
+Content Type: application/x-javascript
+
+Uri: https://dogefarm.io/map.php
+File Name: C:\Downloaded Web Sites\dogefarm.io\map.php.html
+Content Type: text/html
+
+Uri: https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap
+File Name: C:\Downloaded Web Sites\dogefarm.io\css2
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css2?family=Russo+One&display=swap
+File Name: C:\Downloaded Web Sites\dogefarm.io\css2-1
+Content Type: text/css
+
+Uri: https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuBWYMZg.ttf
+File Name: C:\Downloaded Web Sites\dogefarm.io\s\inter\v12\UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuBWYMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuDyfMZg.ttf
+File Name: C:\Downloaded Web Sites\dogefarm.io\s\inter\v12\UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuDyfMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuDyYMZg.ttf
+File Name: C:\Downloaded Web Sites\dogefarm.io\s\inter\v12\UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuDyYMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYMZg.ttf
+File Name: C:\Downloaded Web Sites\dogefarm.io\s\inter\v12\UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYMZg.ttf
+File Name: C:\Downloaded Web Sites\dogefarm.io\s\inter\v12\UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI6fMZg.ttf
+File Name: C:\Downloaded Web Sites\dogefarm.io\s\inter\v12\UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI6fMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeMZg.ttf
+File Name: C:\Downloaded Web Sites\dogefarm.io\s\inter\v12\UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZg.ttf
+File Name: C:\Downloaded Web Sites\dogefarm.io\s\inter\v12\UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuOKfMZg.ttf
+File Name: C:\Downloaded Web Sites\dogefarm.io\s\inter\v12\UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuOKfMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/russoone/v14/Z9XUDmZRWg6M1LvRYsH-yA.ttf
+File Name: C:\Downloaded Web Sites\dogefarm.io\s\russoone\v14\Z9XUDmZRWg6M1LvRYsH-yA.ttf
+Content Type: font/ttf
+
