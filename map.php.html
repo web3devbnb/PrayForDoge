@@ -1,2686 +1,793 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Bonedrop Map</title>
-    <link href="area.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/zoom-marker.css">
-    <link rel="stylesheet" href="css/easy-loading.css">
-    
-    <style>
-        .zoom-marker-navigator{
-            width: 100%;
-            margin: 100%;
-            text-align: center;
-        }
-    </style>
+    <head>
+        <!-- meta tag -->
+        <meta charset="utf-8">
+        <title>PrayForDOGE - $PFD</title>
+        <meta name="description" content="airdrop, doge drop, babydoge drop, multiearn, hold and earn, dropholders, PFD">
+        <!-- responsive tag -->
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- favicon -->
+        <link rel="apple-touch-icon" href="assets/images/fav.png">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
+        <!-- Bootstrap v4.4.1 css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+        <!-- animate css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+        <!-- magnific css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
+        <!-- owl.carousel css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.css">
+        <!-- off canvas css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/off-canvas.css">
+        <!-- flaticon css  -->
+        <link rel="stylesheet" type="text/css" href="assets/css/ico-moon-fonts.css">
+        <!-- font awesome icon css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
+        <!-- spacing css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/sc-spacing.css">
+        <!--Slick Slider CSS -->
+        <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+        <link rel="stylesheet" href="assets/css/slick-theme.min.css">
+        <!-- style css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <!-- responsive css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    </head>
+    <body>
 
-</head>
-<body>
-	<center><a href="index.php.html"><img src="back.png"></a></center>
-	<center><a style="color:#ff0000;">//TESTNET</a></center>
-	<div id="zoom-marker-div" class="zoom-marker-div">
-		<img class="zoom-marker-img" id="zoom-marker-img" name="zoom-marker-img" draggable="enable">
-	</div>
+        <!--Preloader area start here-->
+        <div class="loader_first">
+            <div class="circular-spinner"></div>
+        </div>
+        <!--Preloader area End here-->
 
-</body>
-
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/jquery.mousewheel.min.js"></script>
-<script src="js/hammer.min.js"></script>
-<script src="js/zoom-marker.min.js"></script>
-<script src="js/easy-loading.js"></script>
-<div class="container">
-		<div class="row">
-			<div class="span6" style="text-align:center">
-				<div id="container"> </div>
-
-                                                <h2><small id="logger"><div style="color:#ff0000;">The map will be updated the day the fairsale ends!</div></small></h2>
-                <h2><small id="logger"><div style="color:#1E4809;">Total Winners: 8</div></small></h2>
-				<div style="color:#137473;">
-				
-                       
-                       <li>0x3f63dc4fab82c476246e5fc9ef8ee52000109119 - Coords: [948 x 330] - (92.4%)</li>
-                       
-                       
-                       
-                       <li>0xfa59c71cf0cc1ea57d2ba87941a7b6f35a8d4d81 - Coords: [947 x 302] - (97.02%)</li>
-                       
-                       
-                       
-                       <li>0x6d992dc97c95f1bae65a3d9dfac5f84ff1cbc7e1 - Coords: [1020 x 287] - (96.83%)</li>
-                       
-                       
-                       
-                       <li>0x6d21d422f5ea338ac9f2da61eca7ee77ff05677d - Coords: [1071 x 252] - (88.45%)</li>
-                       
-                       
-                       
-                       <li>0x55901a74c5de94e5d99a57016e751472adb499e2 - Coords: [999 x 220] - (86.62%)</li>
-                       
-                       
-                       
-                       <li>0xd7e9f3642605af42198c6f6ea23dd9e01c9790b0 - Coords: [1001 x 312] - (97.95%)</li>
-                       
-                       
-                       
-                       <li>0x4a420e0878b63775ff4f4db22b4cef3439714693 - Coords: [1032 x 359] - (88.57%)</li>
-                       
-                       
-                       
-                       <li>0xdbd2c1fcf3410ea01220a722cbdbb848b6b8415d - Coords: [1017 x 329] - (94.32%)</li>
-                       
-                       			    </div>
-			</div>
-		</div>
-</div>
-<br>
-<script>
-
-    var picTag = 0;
-    var tagNumber = 0;
-
-
-    var stylePosition = 0;
-    $('#zoom-marker-btn-loading').click(function(e){
-        EasyLoading.show({
-            text: $("<span>"+styleList[stylePosition]+"</span>"),
-            button:$("<span>dismiss</span>"),
-            type: EasyLoading.TYPE[styleList[stylePosition]],
-            //timeout: EasyLoading.TIMEOUT.FAST,
-            callback: function(event, data){
-                switch(event){
-                    case 'on_btn_click' : console.log(data); break;
-                    case 'on_loaded' : console.log("callback with options:"+JSON.stringify(data)); break;
-                }
-            }
-        });
-        if(++stylePosition>=styleList.length)
-            stylePosition = 0;
-    });
-
-    // init item
-    var initImg = function(item) {
-
-        // message for image loaded
-        item.on("zoom_marker_img_loaded", function(event, size){
-            console.log("image has been loaded with size: "+JSON.stringify(size));
-            // we have to set a timer in order to watching the loader in local environment, cause the loading speed is too fast
-            setTimeout(function(){
-                EasyLoading.hide();
-            }, 30);
-            item.zoomMarker_AddMarker({
-                src:"img/bone.png",
-                x:1000,
-                y:300,
-                size:100,
+        <div class="bone_body"> 
+        
+        <div class="dogf_header_v2">
+            
+       <!--Header Start-->
+       <header id="dogf-header" class="dogf-header-section transparent-header">
+            <div class="menu-area menu-sticky">
+                <div class="container">
+                    <div class="heaader-inner-area d-flex justify-content-between align-items-center">
+                        <div class="dogf-logo-area d-flex justify-content-between align-items-center">
+                            <div class="logo">
+                                <a href="index.php.html"><img src="assets/images/logo.png" alt="logo"></a>
+                            </div>
+                            <div class="header-menu">
+                                <ul class="nav-menu">
+                                <li><a href="index.php.html">Home</a></li>
+                                <li><a href="map.php.html">Map</a></li>
+                                <li><a href="#">Drops</a></li>
+                                <li><a href="#">Marketplace</a></li>
+                                <li><a href="#">Airdrop</a></li>
+                            </ul>
+                            </div>
+                        </div>
+                        <div class="dogf-btn-area">
+                            <ul>
+                                <li>
+                                    <a id="nav-expander" class="nav-expander bar" href="#">
+                                        <div class="bar">
+                                            <span class="dot1"></span>
+                                            <span class="dot2"></span>
+                                            <span class="dot3"></span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="buy-token">
+                                    <a class="readon black-shape" href="https://poocoin.app/tokens/0x6365f130c068dd8fc1909abbb26a5bebce353927">
+                                        <span class="btn-text">Buy PFD </span>
+                                        <i class="icon-arrow_down"></i>
+                                        <span class="hover-shape1"></span>
+                                        <span class="hover-shape2"></span>
+                                        <span class="hover-shape3"></span>
+                                    </a>
+                                    <ul>
+                                        <li><a href="#"><img src="assets/images/icons/pancake.png" alt="pancake"> PancakeSwap</a></li>
+                                        <li><a href="#"><img src="assets/images/icons/market.png" alt="market"> CoinMarketCap</a></li>
+                                        <li><a href="#"><img src="assets/images/icons/gate.png" alt="gate"> Gate.io</a></li>
+                                    </ul>
+                                </li>
+                                <li class="connect-btn-wrapper">
+                                    <button type="button" class="connect-btn readon white-btn hover-shape" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="assets/images/icons/connect.png" alt="Icon"> 
+                                        <span class="btn-text">Connect </span>
+                                        <span class="hover-shape1"></span>
+                                        <span class="hover-shape2"></span>
+                                        <span class="hover-shape3"></span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Canvas Mobile Menu start -->
+            <nav class="right_menu_togle mobile-navbar-menu" id="mobile-navbar-menu">
+                <div class="close-btn">
+                    <a id="nav-close2" class="nav-close">
+                        <div class="line">
+                            <span class="line1"></span>
+                            <span class="line2"></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="sidebar-logo mb-30">
+                    <a href="index.php.html"><img src="assets/images/logo-dark.png" alt=""></a>
+                </div>
+                <ul class="nav-menu">
+                <li class="current-menu-item"><a href="index.php.html">Home</a></li>
+                <li><a href="map.php.html">Map</a></li>
+                <li><a href="#">Drops</a></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Airdrop</a></li>
+                <li class="menu-item-has-children">
+                    <a href="#">Buy Token</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">PancakeSwap</a></li>
+                        <li><a href="#">CoinMarketCap</a></li>
+                        <li><a href="#">Gate.io</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button type="button" class="readon black-shape-big connect-wallet-btn-for-mobile" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="assets/images/icons/connect_white.png" alt="Icon">
+                        <span class="btn-text">Connect </span>
+                        <span class="hover-shape1"></span>
+                        <span class="hover-shape2"></span>
+                        <span class="hover-shape3"></span>
+                    </button>
+                </li>
+            </ul>
+            </nav>            <!-- Canvas Menu end -->
+        </header>
+        <!--Header End-->
+            
+            <div class="dogf_v2_hero_sect">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="dogf_v2_hero_left">
+                                <h2 class="wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.2s">Pray For DOGE <span>With</span>US</h2>
+                                <p class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">Keep $PFD in your wallet to MOON</p>
+                                <div class="dogf_v2_hero_btns wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="3s">
+                                    <a href="map.php.html" class="readon white-btn hover-shape view-project-btn">
+                                        <span class="btn-text">Bonedrop Map</span>
+                                        <span class="hover-shape1"></span>
+                                        <span class="hover-shape2"></span>
+                                        <span class="hover-shape3"></span>
+                                    </a>
+                                    <a class="readon black-shape apply-project-btn" href="#">
+                                        <span class="btn-text">Whitepaper-Soon</span>
+                                        <span class="hover-shape1"></span>
+                                        <span class="hover-shape2"></span>
+                                        <span class="hover-shape3"></span>
+                                    </a>
+                                </div>
+                                <div class="buy-token-logos">
+                                    <h6>BUY TOKEN ON</h6>
+                                    <ul>
+                                        <li><a href="https://poocoin.app/tokens/0x6365f130c068dd8fc1909abbb26a5bebce353927"><img src="assets/images/homeV2/buyTokenlogo1.png" alt="logo" class="img-fluid"></a></li>
+                                        <li><a href="https://poocoin.app/tokens/0x6365f130c068dd8fc1909abbb26a5bebce353927"><img src="assets/images/homeV2/buyTokenlogo3.png" alt="logo" class="img-fluid"></a></li>
+                                        <li class="m-0"><a href="https://poocoin.app/tokens/0x6365f130c068dd8fc1909abbb26a5bebce353927"><img src="assets/images/homeV2/buyTokenlogo4.png" alt="logo" class="img-fluid"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="dogf_v2_hero_right">
+                                <div class="dogf_v2_hero_rocket">
+                                    <img src="assets/images/dogedrop.png" alt="Rocket Img" class="Img-fluid RedRocketImg wow fadeInUp">
+                                    <span class="rocketshadow1"><img src="assets/images/homeV2/rocketStar.svg" alt="" class="img-fluid"></span>
+                                    <span class="rocketshadow2"><img src="assets/images/homeV2/rocketStar.svg" alt="" class="img-fluid"></span>
+                                    <span class="rocketshadow3"><img src="assets/images/homeV2/rocketStar.svg" alt="" class="img-fluid"></span>
+                                    <span class="rocketshadow4"><img src="assets/images/homeV2/rocketStar.svg" alt="" class="img-fluid"></span>
+                                    <span class="rocketshadow5"><img src="assets/images/homeV2/rocketStar.svg" alt="" class="img-fluid"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="market_cap_sect">
+            <div class="container">
+                <div class="market_cap_all_content">
+                    <div class="market_cap_content">
+                        <h2>Market Cap</h2>
+                        <h3 class="counter-number">$<span class="counter">NA</span></h3>
+                    </div>
+                    <div class="market_cap_content">
+                        <h2>TVL</h2>
+                        <h3 class="counter-number">$<span class="counter">NA</span></h3>
+                    </div>
+                    <div class="market_cap_content">
+                        <h2>Price</h2>
+                        <h3 class="counter-number">$<span class="counter">NA</span></h3>
+                    </div>
+                    <div class="market_cap_content">
+                        <h2>Fund Raised</h2>
+                        <h3 class="counter-number">$<span class="counter">NA</span></h3>
+                    </div>
+                </div>
+            </div>
+            <span class="red-border-gradient"></span>
+            <span class="green-border-gradient"></span>
+        </div>
+        
+        <!-- Project Section Start -->
+        <div class="dogf-project-section project_pools_sect main-project-area pb-0">
+            <div class="key_points_bg">
+                <div class="bg-stone">
+                    <span class="stone1"><img src="assets/images/icons/stone1.png" alt="" class="img-fluid"></span>
+                    <span class="stone2"><img src="assets/images/icons/bone1.png" alt="" class="img-fluid"></span>
+                    <span class="stone3"><img src="assets/images/icons/bone1.png" alt="" class="img-fluid"></span>
+                </div>
+            </div>
+            <div class="container">
+            <div class="sec-inner align-items-center d-flex justify-content-between mb-30">
+                    <div class="sec-heading">
+                        <div class="sub-inner mb-15">
+                            <span class="sub-title">EXPLORE</span>
+                            <img class="heading-left-image" src="assets/images/icons/steps.png" alt="Steps-Image">
+                        </div>
+                        <h2 class="title">Drops </h2>
+                    </div>
+                </div>
+                <div class="project_v2_tab_content_sect">
+                    <div id="ProectV2_OnGoing" class="project_v2_tab_content animate_opacity">
+                        <div class="row align-items-center">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-item project_item_v2 hover-shape-border wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.4s">
+                                    <div class="project-info d-flex">
+                                        <a href="#">
+                                            <img src="assets/images/project/doge.png" alt="Drop">
+                                        </a>
+                                        <div class="project-auother">
+                                            <h4 class="mb-10"><a href="#">DOGE Drop</a></h4>
+                                            <div class="dsc">DROP => ?? DOGE</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <div class="project-header d-flex justify-content-between">
+                                            <div class="heading-title heading-title-v2">
+                                                <div class="price-counter">
+                                                    <div class="timer timer_1">
+                                                        <ul>
+                                                            <li class="drop">25</li>
+                                                            <li class="drop">Oct</li>
+                                                            <li class="drop">2022</li>
+                                                            <li class="drop">GMT<span></span></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-media">
+                                            <ul class="project-listing">
+                                                <li>Min Earning <span>? DOGE</span></li>
+                                                <li>Max Earning<span>? DOGE</span></li>
+                                                <li>Min PFD Hodl<span>100,000 PFD</span></li>
+                                                <li>Wallet<span><a target="_blank" href="#">Check</a></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-item project_item_v2 hover-shape-border wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.4s">
+                                    <div class="project-info d-flex">
+                                        <a href="#">
+                                            <img src="assets/images/project/baby.png" alt="Drop">
+                                        </a>
+                                        <div class="project-auother">
+                                            <h4 class="mb-10"><a href="#">BABYDOGE Drop</a></h4>
+                                            <div class="dsc">DROP => ?? BABYDOGE</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <div class="project-header d-flex justify-content-between">
+                                            <div class="heading-title heading-title-v2">
+                                                <div class="price-counter">
+                                                    <div class="timer timer_1">
+                                                        <ul>
+                                                            <li class="drop">25</li>
+                                                            <li class="drop">oct</li>
+                                                            <li class="drop">2022</li>
+                                                            <li class="drop">GMT<span></span></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-media">
+                                            <ul class="project-listing">
+                                                <li>Min Earning <span>??? BABY</span></li>
+                                                <li>Max Earning<span>?? BABY</span></li>
+                                                <li>Min PFD Hodl<span>?? PFD</span></li>
+                                                <li>Wallet<span><a target="_blank" href="#">Check</a></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+							 <div class="col-lg-4 col-md-6">
+                                <div class="project-item project_item_v2 hover-shape-border wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.4s">
+                                    <div class="project-info d-flex">
+                                        <a href="#">
+                                            <img src="assets/images/project/dof.png" alt="Drop">
+                                        </a>
+                                        <div class="project-auother">
+                                            <h4 class="mb-10"><a href="#">PFD Drop</a></h4>
+                                            <div class="dsc">DROP => ? PFD</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <div class="project-header d-flex justify-content-between">
+                                            <div class="heading-title heading-title-v2">
+                                                <div class="price-counter">
+                                                    <div class="timer timer_1">
+                                                        <ul>
+                                                            <li class="drop">25</li>
+                                                            <li class="drop">OCT</li>
+                                                            <li class="drop">2022</li>
+                                                            <li class="drop">GMT<span></span></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-media">
+                                            <ul class="project-listing">
+                                                <li>Min Earning <span>?? PFD</span></li>
+                                                <li>Max Earning<span>?? PFD</span></li>
+                                                <li>Min DGOF Hodl<span>100,000 PFD</span></li>
+                                                <li>Wallet<span><a target="_blank" href="#">Check</a></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Key Points Start -->
+        <div class="key_points_section main-project-area">
+            <div class="key_points_bg">
+                <div class="bg-stone">
+                    <span class="stone1"><img src="assets/images/icons/stone1.svg" alt="" class="img-fluid"></span>
+                    <span class="stone2"><img src="assets/images/icons/stone2.svg" alt="" class="img-fluid"></span>
+                    <span class="stone3"><img src="assets/images/icons/stone3.svg" alt="" class="img-fluid"></span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="sec-inner align-items-center mb-30">
+                    <div class="sec-heading">
+                        <div class="sub-inner mb-15">
+                            <span class="sub-title">FEATURES</span>
+                            <img class="heading-left-image" src="assets/images/icons/steps.png" alt="Steps-Image">
+                        </div>
+                        <h2 class="title">Key Points</h2>
+                    </div>
+                    <div class="key_points_content">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="key_points_items wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.4s">
+                                    <div class="key_points_item_img">
+                                        <img src="assets/images/icons/Key_icon1.png" alt="icon" class="img-fluid">
+                                    </div>
+                                    <div class="key_points_item_text">
+                                        <h3>Dogentralized</h3>
+                                        <p>We help projects that want to airdrop, especially dog tokens</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="key_points_items wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="0.5s">
+                                    <div class="key_points_item_img">
+                                        <img src="assets/images/icons/Key_icon2.png" alt="icon" class="img-fluid">
+                                    </div>
+                                    <div class="key_points_item_text">
+                                        <h3>Secure Bridge</h3>
+                                        <p>We believe in the power of community and togetherness</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="key_points_items wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.6s">
+                                    <div class="key_points_item_img">
+                                        <img src="assets/images/icons/Key_icon3.png" alt="icon" class="img-fluid">
+                                    </div>
+                                    <div class="key_points_item_text">
+                                        <h3>to Share</h3>
+                                        <p>We will support both PFD Token, the community and many projects</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="key_points_items wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="0.7s">
+                                    <div class="key_points_item_img">
+                                        <img src="assets/images/icons/Key_icon4.png" alt="icon" class="img-fluid">
+                                    </div>
+                                    <div class="key_points_item_text">
+                                        <h3>Liquidity</h3>
+                                        <p>We will strengthen bonedrops to keep our liquidity strong</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
-                dialog:{
-                    value: "DROP! | Coords: [1000 x 300]",
-                    style: {
-                        color: "red"
-                    }
-                },
-                hint:{style:{color:"red", left:"20px"}}
-            });
-            	            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1210,
-                y:662,
-                size:12,
-                dialog:{
-                    value: "0xeaed594b5926a7d5fbbc61985390baaf936a6b8d | Coords: [1210 x 662]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:423,
-                y:507,
-                size:12,
-                dialog:{
-                    value: "0xd747085be5bb492243a6d2438a83d268d8b2e0a6 | Coords: [423 x 507]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:962,
-                y:463,
-                size:12,
-                dialog:{
-                    value: "0x224cc7923ec5193a5703ec9e9d7899d986cce7a2 | Coords: [962 x 463]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:983,
-                y:72,
-                size:20,
-                dialog:{
-                    value: "0x0d9b1e53cbb251572d982d9f96520e8d40d22bb0 | Coords: [983 x 72]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1228,
-                y:670,
-                size:12,
-                dialog:{
-                    value: "0xf518c93a67f90269a44ffeb032e39b56cfa8a7cc | Coords: [1228 x 670]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1168,
-                y:650,
-                size:12,
-                dialog:{
-                    value: "0x4abe409d169a70676b426d8f851aeed778b6f6f3 | Coords: [1168 x 650]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:978,
-                y:643,
-                size:18,
-                dialog:{
-                    value: "0x99d3ca80962d6d28696284dd999723b1f297f059 | Coords: [978 x 643]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:318,
-                y:716,
-                size:18,
-                dialog:{
-                    value: "0xc89a53499349f3fbb058d88cd7797c6a718bcada | Coords: [318 x 716]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:657,
-                y:161,
-                size:12,
-                dialog:{
-                    value: "0x1516a1836866b5889bc6a6ea27380dead4216700 | Coords: [657 x 161]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1232,
-                y:34,
-                size:12,
-                dialog:{
-                    value: "0x638f32fe09baec1fdc54f962e3e8e5f2b286aa70 | Coords: [1232 x 34]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:948,
-                y:330,
-                size:12,
-                dialog:{
-                    value: "0x3f63dc4fab82c476246e5fc9ef8ee52000109119 | Coords: [948 x 330]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:759,
-                y:75,
-                size:12,
-                dialog:{
-                    value: "0x46da17ad16d5d8e1a519cd9c30a3998dc49008fb | Coords: [759 x 75]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:795,
-                y:688,
-                size:12,
-                dialog:{
-                    value: "0xd0b011965b7e2c7323ed9682edc75efc895c22d1 | Coords: [795 x 688]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:265,
-                y:299,
-                size:15,
-                dialog:{
-                    value: "0x0cc8a5ab974baea3fd9a97fcf0e08c2f97affa7e | Coords: [265 x 299]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:883,
-                y:257,
-                size:12,
-                dialog:{
-                    value: "0x397c2eb19058b8110032b2e0c7308bc33a2d435c | Coords: [883 x 257]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:441,
-                y:111,
-                size:12,
-                dialog:{
-                    value: "0xeee632bf4ba3ffdfcb984393b6f811d4b0fa0593 | Coords: [441 x 111]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:450,
-                y:549,
-                size:12,
-                dialog:{
-                    value: "0x953ab017c8e0764427d3942631194ff633b39cad | Coords: [450 x 549]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:78,
-                y:195,
-                size:12,
-                dialog:{
-                    value: "0xdd0b0ded9c6e536e36f170c95bdb7d28c8e74506 | Coords: [78 x 195]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:152,
-                y:29,
-                size:12,
-                dialog:{
-                    value: "0xa327f3977450256d425ee15af4ffb66acaebc72a | Coords: [152 x 29]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:492,
-                y:151,
-                size:12,
-                dialog:{
-                    value: "0x217bc9db6a351ca799249050e04e87b00766e991 | Coords: [492 x 151]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:431,
-                y:337,
-                size:12,
-                dialog:{
-                    value: "0x69809ecb2afe24cf0e29bfad886695c83f3c8510 | Coords: [431 x 337]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:638,
-                y:29,
-                size:12,
-                dialog:{
-                    value: "0xc977fe72440afb91dbd595cebf23534bbc71b05c | Coords: [638 x 29]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:325,
-                y:122,
-                size:12,
-                dialog:{
-                    value: "0xafcb149b4bfc1438b624bf82fcaee0ff4c79649c | Coords: [325 x 122]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:475,
-                y:42,
-                size:12,
-                dialog:{
-                    value: "0xf1ac2bf63d6bb31e3e5be6978219a261a71e9c95 | Coords: [475 x 42]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:30,
-                y:312,
-                size:12,
-                dialog:{
-                    value: "0x251ec8cce3286796992d8fd92f4bd8742e797979 | Coords: [30 x 312]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:227,
-                y:178,
-                size:12,
-                dialog:{
-                    value: "0xe031e3c1705256b89edbd64cb012d48126b1b001 | Coords: [227 x 178]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:947,
-                y:302,
-                size:12,
-                dialog:{
-                    value: "0xfa59c71cf0cc1ea57d2ba87941a7b6f35a8d4d81 | Coords: [947 x 302]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1020,
-                y:116,
-                size:12,
-                dialog:{
-                    value: "0x622b637c37887a111e315325d13d94f1417650e9 | Coords: [1020 x 116]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:553,
-                y:487,
-                size:12,
-                dialog:{
-                    value: "0x872f5dd898e5c8b01d17a4a8a9205b88c3dc5fbc | Coords: [553 x 487]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:741,
-                y:444,
-                size:12,
-                dialog:{
-                    value: "0x80e48e475b9718ee83b6973fc7f5b5b9ef878f4e | Coords: [741 x 444]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:17,
-                y:75,
-                size:18,
-                dialog:{
-                    value: "0xfdd0e2ce6ab9a8fbccf10a14d1bf7621474fe7f9 | Coords: [17 x 75]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:31,
-                y:129,
-                size:18,
-                dialog:{
-                    value: "0x76c493f302ca57969cd0848ce008d219f63a4cba | Coords: [31 x 129]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:732,
-                y:409,
-                size:12,
-                dialog:{
-                    value: "0x29486c33bf1ecf75d7f8108930b8597150e73861 | Coords: [732 x 409]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:139,
-                y:439,
-                size:12,
-                dialog:{
-                    value: "0xc880f45077b8ddb9e1dec83640ff85fb28bd87de | Coords: [139 x 439]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:343,
-                y:333,
-                size:12,
-                dialog:{
-                    value: "0x918423cbe925f638469cee25c17cc78f88bb9ad6 | Coords: [343 x 333]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:631,
-                y:416,
-                size:12,
-                dialog:{
-                    value: "0x4078deac5aa9a096e8fdbc7664471acf238b796a | Coords: [631 x 416]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:325,
-                y:682,
-                size:18,
-                dialog:{
-                    value: "0x225eec7b5e8f8bfe5c6147c756b360b007ce592a | Coords: [325 x 682]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:269,
-                y:619,
-                size:12,
-                dialog:{
-                    value: "0xef0b0d3ab59da480f7bd755109ceae87aec6bd92 | Coords: [269 x 619]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:781,
-                y:122,
-                size:12,
-                dialog:{
-                    value: "0x890525d3636bcfd6a10efbbc31532fc587c1fef5 | Coords: [781 x 122]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:303,
-                y:456,
-                size:12,
-                dialog:{
-                    value: "0x3f1dc5f454b6ec58a564e4a4c9ab2dd1f7589b7e | Coords: [303 x 456]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1109,
-                y:127,
-                size:12,
-                dialog:{
-                    value: "0x66d145d3f9d98eb0b90d9fc6071e367ef0fa1f46 | Coords: [1109 x 127]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1076,
-                y:627,
-                size:12,
-                dialog:{
-                    value: "0x37404fcbf79997a78841cd5265935df01d1b118a | Coords: [1076 x 627]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:907,
-                y:631,
-                size:12,
-                dialog:{
-                    value: "0xe84a782023a558716ec1c4b8e474361f3e276b66 | Coords: [907 x 631]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:318,
-                y:375,
-                size:12,
-                dialog:{
-                    value: "0xca5286e5a68648eaf16e7b25780c7eee838e74ee | Coords: [318 x 375]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1231,
-                y:127,
-                size:12,
-                dialog:{
-                    value: "0x1a9ab2efda231e1b997bef0086f919bf5e7ccd2e | Coords: [1231 x 127]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:551,
-                y:37,
-                size:12,
-                dialog:{
-                    value: "0x9160f25147c041c4d2f931bf0b1336dbd2888378 | Coords: [551 x 37]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:603,
-                y:53,
-                size:12,
-                dialog:{
-                    value: "0xcb1973ad1ee80ea92405cea8fa291a2dc94458be | Coords: [603 x 53]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:48,
-                y:354,
-                size:12,
-                dialog:{
-                    value: "0x3c003d94a6670087db2d07e7ecad60ab8a4c7786 | Coords: [48 x 354]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:497,
-                y:481,
-                size:12,
-                dialog:{
-                    value: "0x2251d6a7796eee4a2dba0c7b3f628cee88a07231 | Coords: [497 x 481]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:555,
-                y:145,
-                size:12,
-                dialog:{
-                    value: "0xf4140c317c70966cb653906d7da182c405761047 | Coords: [555 x 145]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1007,
-                y:73,
-                size:12,
-                dialog:{
-                    value: "0xf69fcaa0c3c0845d17e950988ba7e47cb88ad0e3 | Coords: [1007 x 73]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:598,
-                y:130,
-                size:12,
-                dialog:{
-                    value: "0x66832b82ce167ce19bf640aeb85b778f7178907d | Coords: [598 x 130]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:898,
-                y:298,
-                size:12,
-                dialog:{
-                    value: "0x4583439924005ba530e63e59d0f3e19cbbe32063 | Coords: [898 x 298]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:392,
-                y:162,
-                size:12,
-                dialog:{
-                    value: "0xbeb6e4e88b61940d331ca3b62b878f1e50990f37 | Coords: [392 x 162]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1020,
-                y:287,
-                size:12,
-                dialog:{
-                    value: "0x6d992dc97c95f1bae65a3d9dfac5f84ff1cbc7e1 | Coords: [1020 x 287]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:55,
-                y:207,
-                size:18,
-                dialog:{
-                    value: "0x2de6df3c788b27afc1768abd6c145cce84721f46 | Coords: [55 x 207]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:344,
-                y:356,
-                size:12,
-                dialog:{
-                    value: "0xe5d7c04707e69f3019c769b17ddd7ecd04d2bdfb | Coords: [344 x 356]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:258,
-                y:238,
-                size:12,
-                dialog:{
-                    value: "0x02f2a6ab6b86e5c2f1ccd7f5cd30df55a4493034 | Coords: [258 x 238]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:507,
-                y:553,
-                size:12,
-                dialog:{
-                    value: "0xab8bb2a68c9a57f2a27b4335ad17c9b8394af93d | Coords: [507 x 553]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:912,
-                y:605,
-                size:12,
-                dialog:{
-                    value: "0xda2421bd6f948574faefaa1bb4a6e6276471e786 | Coords: [912 x 605]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:419,
-                y:588,
-                size:12,
-                dialog:{
-                    value: "0xd5002f9c744d656f821f4621cebea68baa22d887 | Coords: [419 x 588]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:316,
-                y:220,
-                size:12,
-                dialog:{
-                    value: "0x2bae28b1ba06718b4e964a0a010a0e956f835e94 | Coords: [316 x 220]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:355,
-                y:318,
-                size:18,
-                dialog:{
-                    value: "0x9755ab01fb29dd74c458307f04c6358440330295 | Coords: [355 x 318]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:694,
-                y:575,
-                size:12,
-                dialog:{
-                    value: "0x57658c8d816c275de9c1cf7007bedc8cf34cc71d | Coords: [694 x 575]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:242,
-                y:30,
-                size:12,
-                dialog:{
-                    value: "0x769b5a85e0f7268a8f78e508dc3cf0ff0675d897 | Coords: [242 x 30]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:878,
-                y:397,
-                size:18,
-                dialog:{
-                    value: "0xc5e815ff160c807ac82445e37e6629157d21fd5e | Coords: [878 x 397]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:513,
-                y:576,
-                size:12,
-                dialog:{
-                    value: "0xae3a1c35ae7d87d411b8cb30f455db849ea15760 | Coords: [513 x 576]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:463,
-                y:548,
-                size:15,
-                dialog:{
-                    value: "0x0e37d32e1e46e1d4d43a4e032de098ad2ac24585 | Coords: [463 x 548]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:705,
-                y:356,
-                size:15,
-                dialog:{
-                    value: "0xd591fe3ee898891488a43aad0b5c57f8ee3c0f3b | Coords: [705 x 356]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:575,
-                y:391,
-                size:12,
-                dialog:{
-                    value: "0xa6d8256c649b649c8710afee27b0fcc9525e3209 | Coords: [575 x 391]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:708,
-                y:552,
-                size:12,
-                dialog:{
-                    value: "0x07a729c3c3aa1d1128f92ed58bf3e993fda6b3e6 | Coords: [708 x 552]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:357,
-                y:198,
-                size:12,
-                dialog:{
-                    value: "0xd336bcd7eff54a3899b23201153d1ae6150c71c4 | Coords: [357 x 198]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:46,
-                y:119,
-                size:12,
-                dialog:{
-                    value: "0xc15ef2cee729102d562ae7355262b0ad152e3613 | Coords: [46 x 119]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:533,
-                y:415,
-                size:12,
-                dialog:{
-                    value: "0xdfda2f25e8dc0e8b89fb6b13a3b9579fe0619015 | Coords: [533 x 415]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1036,
-                y:103,
-                size:12,
-                dialog:{
-                    value: "0x6b5d03b89e1e30b114670e63482992f6e9d14f8e | Coords: [1036 x 103]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:421,
-                y:506,
-                size:12,
-                dialog:{
-                    value: "0x3cbde7c8103716c2e52caaff0be7b05243e4ed4d | Coords: [421 x 506]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:961,
-                y:171,
-                size:12,
-                dialog:{
-                    value: "0x6af37b8d66da6c7b2418b28e565161d96a3a4d37 | Coords: [961 x 171]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1261,
-                y:524,
-                size:18,
-                dialog:{
-                    value: "0x9a703f7612b465e0ad6bfa96df7cc1d631ba6861 | Coords: [1261 x 524]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1270,
-                y:478,
-                size:12,
-                dialog:{
-                    value: "0xf3dfee5f9f6f1eb687776dc16390b0a2ea4289e2 | Coords: [1270 x 478]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1179,
-                y:573,
-                size:12,
-                dialog:{
-                    value: "0xa945358485356231a955b50618a787d333907790 | Coords: [1179 x 573]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:895,
-                y:35,
-                size:12,
-                dialog:{
-                    value: "0xea7523784ebef00d2f07798d905a8664104140f5 | Coords: [895 x 35]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:844,
-                y:168,
-                size:12,
-                dialog:{
-                    value: "0x4b0cac2a7e4945cec4e9b320f554abfa0be07278 | Coords: [844 x 168]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:860,
-                y:314,
-                size:12,
-                dialog:{
-                    value: "0x83282a49dca739038edf75f4e7ef49c7b272de37 | Coords: [860 x 314]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1068,
-                y:137,
-                size:12,
-                dialog:{
-                    value: "0x7533864ef90f243cc6dbf9e1dc9e859d710f0db5 | Coords: [1068 x 137]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1024,
-                y:489,
-                size:15,
-                dialog:{
-                    value: "0xd65f656da1fc5b2de7b128d94f7966dfa94306b8 | Coords: [1024 x 489]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:6,
-                y:35,
-                size:12,
-                dialog:{
-                    value: "0xe9e34bde63350a0cb5f4aed124dfae56b24c37d5 | Coords: [6 x 35]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1071,
-                y:252,
-                size:12,
-                dialog:{
-                    value: "0x6d21d422f5ea338ac9f2da61eca7ee77ff05677d | Coords: [1071 x 252]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:215,
-                y:435,
-                size:12,
-                dialog:{
-                    value: "0xaac60cc5c31ddd10efa9120d6b62fb9f262759bf | Coords: [215 x 435]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:999,
-                y:220,
-                size:12,
-                dialog:{
-                    value: "0x55901a74c5de94e5d99a57016e751472adb499e2 | Coords: [999 x 220]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:210,
-                y:587,
-                size:12,
-                dialog:{
-                    value: "0x88cd19db967841261f2eec2f63c4e9dcdefe1025 | Coords: [210 x 587]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:797,
-                y:20,
-                size:12,
-                dialog:{
-                    value: "0x0645eab762c75160ba41714e09e30b13fd281229 | Coords: [797 x 20]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:241,
-                y:409,
-                size:12,
-                dialog:{
-                    value: "0xcd0c4eaf4e30253a5228e860e6ba5d4f51db02b0 | Coords: [241 x 409]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1001,
-                y:312,
-                size:12,
-                dialog:{
-                    value: "0xd7e9f3642605af42198c6f6ea23dd9e01c9790b0 | Coords: [1001 x 312]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:636,
-                y:336,
-                size:12,
-                dialog:{
-                    value: "0x1e6d89210cdede12057008c70bca895438983c35 | Coords: [636 x 336]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:48,
-                y:651,
-                size:12,
-                dialog:{
-                    value: "0x756f84b46b45433f82a34baf7f09bba821defbc4 | Coords: [48 x 651]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:234,
-                y:601,
-                size:12,
-                dialog:{
-                    value: "0xf34be8c7a6970b96cad7f49eb61160b6bc90770e | Coords: [234 x 601]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:186,
-                y:517,
-                size:18,
-                dialog:{
-                    value: "0x4c3a49be6bca3a36848772e2ae375ce99d8ffbe6 | Coords: [186 x 517]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1133,
-                y:473,
-                size:15,
-                dialog:{
-                    value: "0x8fa8b813aab991053fc37b123c502b646506f776 | Coords: [1133 x 473]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1051,
-                y:578,
-                size:12,
-                dialog:{
-                    value: "0xc72fed114603672fa95e3b7c8a847ce763ab30d7 | Coords: [1051 x 578]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1032,
-                y:359,
-                size:20,
-                dialog:{
-                    value: "0x4a420e0878b63775ff4f4db22b4cef3439714693 | Coords: [1032 x 359]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:646,
-                y:376,
-                size:12,
-                dialog:{
-                    value: "0x760703bfe37c87f422a9bc198de617df00b86365 | Coords: [646 x 376]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1072,
-                y:396,
-                size:15,
-                dialog:{
-                    value: "0x230932a51bebfa72cffd97645dcb8d769daff45e | Coords: [1072 x 396]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:819,
-                y:623,
-                size:12,
-                dialog:{
-                    value: "0x79715f23ef04538b95fc249658d952468e5fe7eb | Coords: [819 x 623]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:353,
-                y:613,
-                size:12,
-                dialog:{
-                    value: "0xbfcf305957bd179db28a92e7da8bab8ae6674b84 | Coords: [353 x 613]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:170,
-                y:39,
-                size:12,
-                dialog:{
-                    value: "0x529eb1ef66076cb349ad7a7d3a4afbee47ca62f1 | Coords: [170 x 39]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1207,
-                y:151,
-                size:12,
-                dialog:{
-                    value: "0x2a0b834356d53c9b94d5f3e893a397b9904e2e4b | Coords: [1207 x 151]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:768,
-                y:645,
-                size:12,
-                dialog:{
-                    value: "0x1dc40f778963057f268f2a9a7c4d910636031579 | Coords: [768 x 645]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:456,
-                y:125,
-                size:12,
-                dialog:{
-                    value: "0x5065bad3cd8c81676bcb0ff5d31e7fbfc18ff57c | Coords: [456 x 125]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:735,
-                y:303,
-                size:12,
-                dialog:{
-                    value: "0xd0ed3983cdf34bcbaadf8ffe09bcf850afa4db19 | Coords: [735 x 303]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1240,
-                y:179,
-                size:12,
-                dialog:{
-                    value: "0xa27287076229b57599cf5dbc7b219b6c4db5c0c2 | Coords: [1240 x 179]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1260,
-                y:629,
-                size:12,
-                dialog:{
-                    value: "0x951566c8ed85bf83a0f90626839722479f8c3b49 | Coords: [1260 x 629]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:100,
-                y:225,
-                size:12,
-                dialog:{
-                    value: "0xa2d3692880cbbab8d0d98da98d77ce0b27c99029 | Coords: [100 x 225]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:768,
-                y:675,
-                size:12,
-                dialog:{
-                    value: "0x53a2231c94209c03c8229c27c4a50a8f53076405 | Coords: [768 x 675]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:20,
-                y:312,
-                size:12,
-                dialog:{
-                    value: "0x0fee7e1e7137f13ac723f14750b55713761ce1e9 | Coords: [20 x 312]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:472,
-                y:128,
-                size:12,
-                dialog:{
-                    value: "0x4e313ae1e1de2826b11a19274986249a6158478d | Coords: [472 x 128]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:549,
-                y:548,
-                size:12,
-                dialog:{
-                    value: "0xa88a5036c876a33a8b009879fe7a7ba6aa8c3fb6 | Coords: [549 x 548]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:94,
-                y:463,
-                size:12,
-                dialog:{
-                    value: "0x5b1f47b931642176270f2f0babeae85bbc5615d6 | Coords: [94 x 463]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:582,
-                y:545,
-                size:12,
-                dialog:{
-                    value: "0xfdda2cc786f8cd8e8586a62966148ecde97e203b | Coords: [582 x 545]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:345,
-                y:558,
-                size:12,
-                dialog:{
-                    value: "0x5e41f657fa92fcc1eb56fc7d6200cfe6d34e3f81 | Coords: [345 x 558]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1106,
-                y:707,
-                size:12,
-                dialog:{
-                    value: "0x38989b4bd5ed62bb1ea815a123432f322664a720 | Coords: [1106 x 707]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:213,
-                y:317,
-                size:12,
-                dialog:{
-                    value: "0xd469cf0b97aa5c2c771280fa819b2add816159c7 | Coords: [213 x 317]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:964,
-                y:29,
-                size:12,
-                dialog:{
-                    value: "0x6fe697508e65cef134c3417b39730eafe4291864 | Coords: [964 x 29]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:876,
-                y:226,
-                size:12,
-                dialog:{
-                    value: "0x7fe40a3114f66b6081c5786e510a673b585850f4 | Coords: [876 x 226]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:207,
-                y:323,
-                size:12,
-                dialog:{
-                    value: "0xcda5b4f037a15399eddf11cc81c0e139a3a4d23f | Coords: [207 x 323]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:315,
-                y:13,
-                size:12,
-                dialog:{
-                    value: "0x4ce1eb820b81a1b899fae6a1ca7a0fcc6fe708b2 | Coords: [315 x 13]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:644,
-                y:29,
-                size:18,
-                dialog:{
-                    value: "0x073a8abca63b3b8e5fba39cd0ae9e0b727951bae | Coords: [644 x 29]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1011,
-                y:522,
-                size:12,
-                dialog:{
-                    value: "0xc36f3b6b8efed2255086b11b6efc57c66f823a0e | Coords: [1011 x 522]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:674,
-                y:269,
-                size:12,
-                dialog:{
-                    value: "0x94bca20709bfe2cef41d13577d90a908cbc3c9e3 | Coords: [674 x 269]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:353,
-                y:1,
-                size:12,
-                dialog:{
-                    value: "0x124d9bf2fecbc16b54ec4accdb14d44c2144f012 | Coords: [353 x 1]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:401,
-                y:173,
-                size:12,
-                dialog:{
-                    value: "0x56e06017b7cdf66a89efff6773d91078b306fec2 | Coords: [401 x 173]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1106,
-                y:581,
-                size:12,
-                dialog:{
-                    value: "0xef3a0ffc3fa5debb1ef2052018cbda0658841978 | Coords: [1106 x 581]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:648,
-                y:400,
-                size:18,
-                dialog:{
-                    value: "0x04c6cae60f6146b18225bc1ba7cf1fd53a599f12 | Coords: [648 x 400]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:224,
-                y:76,
-                size:18,
-                dialog:{
-                    value: "0xf13dbe9b6dc70f3229d0f4e3d03ac684db524af0 | Coords: [224 x 76]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:75,
-                y:334,
-                size:18,
-                dialog:{
-                    value: "0x87c85cb1c1d0672e805e5a274e045c96069dafd8 | Coords: [75 x 334]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:983,
-                y:2,
-                size:15,
-                dialog:{
-                    value: "0x0e9d8f78cb7e4562cfa2524186a879f0f2b7f375 | Coords: [983 x 2]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:24,
-                y:82,
-                size:12,
-                dialog:{
-                    value: "0x491f436b51b3f80d0f84b4d9e116d36a9015dcb3 | Coords: [24 x 82]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:687,
-                y:399,
-                size:12,
-                dialog:{
-                    value: "0x19743b9f771b0c8feab3b8f7d1a2f3e33c731ac9 | Coords: [687 x 399]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:426,
-                y:227,
-                size:12,
-                dialog:{
-                    value: "0x7d29e891005d438fac8b84fede372df5333587db | Coords: [426 x 227]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:353,
-                y:446,
-                size:12,
-                dialog:{
-                    value: "0x8ddd74bfec912a4318cd76b04ed96193bbca5312 | Coords: [353 x 446]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:276,
-                y:259,
-                size:15,
-                dialog:{
-                    value: "0x5b8b7417ffd490980d622f37d6f2690e7e0d69a0 | Coords: [276 x 259]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:301,
-                y:177,
-                size:12,
-                dialog:{
-                    value: "0x652a42419917b73aff2064e880d4a2389d6bd186 | Coords: [301 x 177]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:611,
-                y:20,
-                size:12,
-                dialog:{
-                    value: "0x64b52174fede3cd046dae0490300dcf32b1b29df | Coords: [611 x 20]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1147,
-                y:533,
-                size:12,
-                dialog:{
-                    value: "0xd4818df3ce49ae3b74a01ddff60af3d46b27f8cd | Coords: [1147 x 533]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1235,
-                y:149,
-                size:12,
-                dialog:{
-                    value: "0xf74eda00a5f3494d1be3cb9697bc08f6d7b33a1f | Coords: [1235 x 149]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:177,
-                y:587,
-                size:12,
-                dialog:{
-                    value: "0xde05852a7febc9b4b053d10ef9ef8a43453113d5 | Coords: [177 x 587]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1017,
-                y:329,
-                size:12,
-                dialog:{
-                    value: "0xdbd2c1fcf3410ea01220a722cbdbb848b6b8415d | Coords: [1017 x 329]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:486,
-                y:446,
-                size:12,
-                dialog:{
-                    value: "0x8c5a52f7ca14748a0928e8233eb69421ab62cc53 | Coords: [486 x 446]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:240,
-                y:153,
-                size:12,
-                dialog:{
-                    value: "0xed9a61d6c38b4506c1b7059ef44a94aea9777180 | Coords: [240 x 153]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1205,
-                y:156,
-                size:12,
-                dialog:{
-                    value: "0x723ec0051f9544a9a4af6b74302e8363e712b28f | Coords: [1205 x 156]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1153,
-                y:427,
-                size:12,
-                dialog:{
-                    value: "0x1cac0dadb1279567ee9a3e2d4bf063beafb7dd0b | Coords: [1153 x 427]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:58,
-                y:347,
-                size:12,
-                dialog:{
-                    value: "0xcd240d5e015714881a235be30c680d72c2d7f7d1 | Coords: [58 x 347]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:83,
-                y:186,
-                size:12,
-                dialog:{
-                    value: "0x1c62e854f77e9560bbf1c93dce4f84812e49121c | Coords: [83 x 186]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1248,
-                y:46,
-                size:18,
-                dialog:{
-                    value: "0x33087856598b7d4e77f32d70d7a476aeca646562 | Coords: [1248 x 46]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:237,
-                y:325,
-                size:12,
-                dialog:{
-                    value: "0x53317c3425db6c38b0e0fee22a98263cc4de59a4 | Coords: [237 x 325]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:615,
-                y:326,
-                size:12,
-                dialog:{
-                    value: "0x6629b9b26d4f7188fc92588d12bfac648bf20fff | Coords: [615 x 326]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:593,
-                y:718,
-                size:12,
-                dialog:{
-                    value: "0x5b1e8b981c6c462aeb53629f97f49f9156fd2126 | Coords: [593 x 718]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:2,
-                y:442,
-                size:12,
-                dialog:{
-                    value: "0x4d0ea6d4500483e1b27f5a44e348c54269dc0783 | Coords: [2 x 442]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:851,
-                y:39,
-                size:12,
-                dialog:{
-                    value: "0x7974998307a0b38e21f398b1016ec538eeccb353 | Coords: [851 x 39]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:724,
-                y:459,
-                size:12,
-                dialog:{
-                    value: "0x413e02d87b729141e44509536bbadef9b5350482 | Coords: [724 x 459]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1068,
-                y:16,
-                size:12,
-                dialog:{
-                    value: "0xdb7d1206d6fa4ece74f28a16ed02c0b5c9ac54bc | Coords: [1068 x 16]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:607,
-                y:145,
-                size:12,
-                dialog:{
-                    value: "0xee66a2184f1c5ad3f468e837edc607f716a784a7 | Coords: [607 x 145]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1110,
-                y:674,
-                size:12,
-                dialog:{
-                    value: "0x61bdd3e277aaea221f477304f8ed17704f6576cb | Coords: [1110 x 674]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1170,
-                y:57,
-                size:12,
-                dialog:{
-                    value: "0x34fda56d83d04cad6c376d780239544220ebaa17 | Coords: [1170 x 57]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:137,
-                y:511,
-                size:12,
-                dialog:{
-                    value: "0xc998135e0618af49a3cb083faaff157bf2a9d6ac | Coords: [137 x 511]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:948,
-                y:606,
-                size:12,
-                dialog:{
-                    value: "0x87d0e2e96b2ed4d0c887612bce1b3bb4b04eb60b | Coords: [948 x 606]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1247,
-                y:52,
-                size:12,
-                dialog:{
-                    value: "0x93c995b196272e22873e5a5b70c31f0423f7ed82 | Coords: [1247 x 52]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:418,
-                y:374,
-                size:12,
-                dialog:{
-                    value: "0xba249b14099388743d29df1dec6b66a3d162bfcd | Coords: [418 x 374]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:656,
-                y:391,
-                size:12,
-                dialog:{
-                    value: "0x00779830f04a04d32903b14601aab5e119ddc9d3 | Coords: [656 x 391]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:600,
-                y:185,
-                size:12,
-                dialog:{
-                    value: "0xa9881ee90390984a2476ef62e149310651c44d99 | Coords: [600 x 185]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:783,
-                y:353,
-                size:15,
-                dialog:{
-                    value: "0x56a5be9be48ef495fbd01e034b329e84d3e30a85 | Coords: [783 x 353]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:138,
-                y:30,
-                size:18,
-                dialog:{
-                    value: "0xa48a0f7e47924af2adcc6b27447b0a9531302214 | Coords: [138 x 30]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:683,
-                y:40,
-                size:15,
-                dialog:{
-                    value: "0x744ecb354c1671b9d12ce69ca3f8a4ac3e5aacd3 | Coords: [683 x 40]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:440,
-                y:112,
-                size:12,
-                dialog:{
-                    value: "0x18157af0980be5dac30c6c0e0f72434ad405efd9 | Coords: [440 x 112]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:149,
-                y:438,
-                size:12,
-                dialog:{
-                    value: "0x42e66e8d5188a3ea31c5ee47578d23eac1592e62 | Coords: [149 x 438]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:705,
-                y:415,
-                size:23,
-                dialog:{
-                    value: "0xc396737e2b1f70cfbbc16d4cc49d257b4f9948f9 | Coords: [705 x 415]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:519,
-                y:39,
-                size:20,
-                dialog:{
-                    value: "0x3a72c8585d724c51ca8252d5b0243bdc9ae79f59 | Coords: [519 x 39]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:481,
-                y:392,
-                size:23,
-                dialog:{
-                    value: "0x21d96d7f942dc1d212919057a961af7fb5647142 | Coords: [481 x 392]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:1174,
-                y:129,
-                size:12,
-                dialog:{
-                    value: "0x7be62835501d57168339f22e414a18d29102bf6c | Coords: [1174 x 129]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:597,
-                y:249,
-                size:12,
-                dialog:{
-                    value: "0x64fb322073baacd70d92853a8aea90efa5342a04 | Coords: [597 x 249]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:259,
-                y:433,
-                size:12,
-                dialog:{
-                    value: "0x23df88979641ac9eafd8060a54e15ba6018e7ba7 | Coords: [259 x 433]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                            
-                item.zoomMarker_AddMarker({
-                src:"img/home.png",
-                x:785,
-                y:696,
-                size:15,
-                dialog:{
-                    value: "0x8d944d446c769456e2edf25c6867f59450249230 | Coords: [785 x 696]",
-                    style: {
-                        color: "black"
-                    }
-                    
-                }
-            });
-                             
+            </div>
+        </div>
+        
+        <!-- Tokenomics Section Start -->
+        <div class="tokenomics_section main-project-area">
+            <div class="container">
+                <div class="sec-inner align-items-center mb-30">
+                    <div class="sec-heading">
+                        <div class="sub-inner mb-15">
+                            <span class="sub-title">statistics</span>
+                            <img class="heading-left-image" src="assets/images/icons/steps.png" alt="Steps-Image">
+                        </div>
+                        <h2 class="title mb-0">Tokenomics</h2>
+                    </div>
+                    <div class="tokenomics_contents">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="tokenomics_contents_left wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="0.4s">
+                                    <h3 class="counter-number">Total Supply :  <span class="counter">1,000,000,000,000                                    </span></h3>
+                                    <div class="tokenomics_list_sect">
+                                        <ul>
+                                            <li>
+                                                <span class="farming_pool"></span>
+                                                <div class="tokenomics_list_text">
+                                                    <h4>Farming Pool</h4>
+                                                    <h5 class="counter-number"><span class="counter">??</span>%</h5>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <span class="staking"></span>
+                                                <div class="tokenomics_list_text">
+                                                    <h4>Staking</h4>
+                                                    <h5 class="counter-number"><span class="counter">??</span>%</h5>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <span class="ecosystem"></span>
+                                                <div class="tokenomics_list_text">
+                                                    <h4>Marketing</h4>
+                                                    <h5 class="counter-number"><span class="counter">8</span>%</h5>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <span class="advisors"></span>
+                                                <div class="tokenomics_list_text">
+                                                    <h4>LP</h4>
+                                                    <h5 class="counter-number"><span class="counter">2</span>%</h5>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                            <li>
+                                                <span class="liquidity"></span>
+                                                <div class="tokenomics_list_text">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <span class="marketing"></span>
+                                                <div class="tokenomics_list_text">                                                    <h5 class="counter-number"><span class="counter">9</span>%</h5>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <span class="advisors"></span>
+                                                <div class="tokenomics_list_text">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tokenomics_contents_right wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.4s">
+                                    <div class="tokenomics_contents_right_img">
+                                        <img src="assets/images/homeV2/piechart.png" alt="img" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Tokenomics Section End -->
+        
+        <!-- Multi-Chain Support Section start -->
+        <div class="multi_chain_support_sect">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="multi_chain_support_left_sect wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="0.4s">
+                            <div class="multi_chain_support_img">
+                                <img src="assets/images/homeV2/center.png" alt="img" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="multi_chain_support_right_sect wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.4s">
+                            <div class="sec-inner align-items-center mb-30">
+                                <div class="sec-heading">
+                                    <div class="sub-inner mb-15">
+                                        <span class="sub-title">$PFD</span>
+                                        <img class="heading-left-image" src="assets/images/icons/steps.png" alt="Steps-Image">
+                                    </div>
+                                    <h2 class="title mb-0">Multi-Earning</h2>
+                                </div>
+                                <div class="multi_chain_support_right_content">
+                                    <p>Meet PrayForDOGEs unique airdrops and Blockchain Games.</p>
+                                    <div class="multi_chain_support_right_list">
+                                        <ul>
+                                            <li><span><img src="assets/images/icons/icon-Check.svg" alt="img" class="img-fluid"></span>Binance Smart Chain</li>
+                                            <li><span><img src="assets/images/icons/icon-Check.svg" alt="img" class="img-fluid"></span>Bonedrops</li>
+                                            <li><span><img src="assets/images/icons/icon-Check.svg" alt="img" class="img-fluid"></span>Airdrops</li>
+                                        </ul>
+                                        <ul class="m-0">
+                                            <li><span><img src="assets/images/icons/icon-Check.svg" alt="img" class="img-fluid"></span>Doge Tokens</li>
+                                            <li><span><img src="assets/images/icons/icon-Check.svg" alt="img" class="img-fluid"></span>Games</li>
+                                            <li><span><img src="assets/images/icons/icon-Check.svg" alt="img" class="img-fluid"></span>NFTs</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Multi-Chain Support Section End -->
+        
+        <!-- RoadMapV2 Section Start -->
+        <div class="roadmap_v2_section main-project-area">
+            <div class="container">
+                <div class="sec-inner align-items-center d-flex justify-content-between mb-30">
+                    <div class="sec-heading">
+                        <div class="sub-inner mb-15">
+                            <span class="sub-title">Our Goals</span>
+                            <img class="heading-left-image" src="assets/images/icons/steps.png" alt="Steps-Image">
+                        </div>
+                        <h2 class="title">ROADMAPs</h2>
+                    </div>
+                    <div class="dogf-btn-area roadmap-tab-btns">
+                        <ul>
+                            <li class="tablinks m-0" onclick="openCity(event, 'roadmap_v2_1')">
+                                 <button class="readon white-btn black-shape"> 
+                                    <span class="btn-text">2022</span>
+                                    <span class="hover-shape1"></span>
+                                    <span class="hover-shape2"></span>
+                                    <span class="hover-shape3"></span>
+                                </button>
+                            </li>
+                            
+                            <li class="tablinks" onclick="openCity(event, 'roadmap_v2_2')" id="defaultOpen">
+                                <button class="readon white-btn black-shape"> 
+                                    <span class="btn-text">2023</span>
+                                    <span class="hover-shape1"></span>
+                                    <span class="hover-shape2"></span>
+                                    <span class="hover-shape3"></span>
+                                </button>
+                            </li>
+                            
+                            <li class="tablinks" onclick="openCity(event, 'roadmap_v2_3')">
+                                <button class="readon white-btn black-shape"> 
+                                    <span class="btn-text">2024</span>
+                                    <span class="hover-shape1"></span>
+                                    <span class="hover-shape2"></span>
+                                    <span class="hover-shape3"></span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="roadmap_v2_tab_content_sect">
+                    <div class="roadmap_shape">
+                        <img src="assets/images/bg/roadMap_Line.svg" alt="" class="img-fluid">
+                    </div>
+                    <div id="roadmap_v2_1" class="tabcontent animate_opacity">
+                        <div class="roadmap_v2_tab_content roadmap_v2_tab_content_1">
+                           <div class="roadmap_slick_slider_section">
+                               <div class="row m-0">
+                                   <div class="col-md-4">
+                                       <div class="roadmap_contents disable">
+                                           <h3>Q3/Q4 2022</h3>
+                                           <div class="roadmap_list_sect">
+                                               <div class="check_icon_bg"><img src="assets/images/icons/roadmapChackicon.svg" alt="" class="img-fluid"></div>
+                                               <ul>
+                                                   <li><span><img src="assets/images/kycimg/RMcheckicon.svg" alt="" class="img-fluid"></span>ILO & Token DEX Listing</li>
+                                                   <li><span><img src="assets/images/kycimg/RMcheckicon.svg" alt="" class="img-fluid"></span>Whitepaper v1</li>
+                                                   <li><span><img src="assets/images/kycimg/RMcheckicon.svg" alt="" class="img-fluid"></span>Development of NFT Marketplace & Blockchain Games</li>
+                                               </ul>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                        </div>
+                    </div>
 
-        });
+                    <div id="roadmap_v2_2" class="tabcontent animate_opacity">
+                        <div class="roadmap_v2_tab_content roadmap_v2_tab_content_2">
+                            <div class="roadmap_slick_slider_section">
+                               <div class="row m-0 slick_slider_2022">
+                                   <div class="col-md-12">
+                                       <div class="roadmap_contents disable">
+                                           <h3>Q1 2023</h3>
+                                           <div class="roadmap_list_sect">
+                                               <div class="check_icon_bg"><img src="assets/images/icons/roadmapChackicon.svg" alt="" class="img-fluid"></div>
+                                               <ul>
+                                                   <li><span><img src="assets/images/kycimg/munies.svg" alt="" class="img-fluid"></span>Game launch</li>
+                                                   <li><span><img src="assets/images/kycimg/munies.svg" alt="" class="img-fluid"></span>NFT Marketplace Release</li>
+                                                   <li><span><img src="assets/images/kycimg/munies.svg" alt="" class="img-fluid"></span>New Bonedrop Tokens</li>
+                                               </ul>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <div class="col-md-12">
+                                       <div class="roadmap_contents disable">
+                                           <h3>Q2 2023</h3>
+                                           <div class="roadmap_list_sect">
+                                               <div class="check_icon_bg"><img src="assets/images/icons/roadmapChackicon.svg" alt="" class="img-fluid"></div>
+                                               <ul>
+                                                   <li><span><img src="assets/images/kycimg/munies.svg" alt="" class="img-fluid"></span>Access for indie game developers</li>
+                                                   <li><span><img src="assets/images/kycimg/munies.svg" alt="" class="img-fluid"></span>New Bonedrop Tokens</li>
+                                                   <li><span><img src="assets/images/kycimg/munies.svg" alt="" class="img-fluid"></span>Launchpad Release</li>
+                                               </ul>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <div class="col-md-12">
+                                       <div class="roadmap_contents disable">
+                                           <h3>Q3 2023</h3>
+                                           <div class="roadmap_list_sect">
+                                               <div class="check_icon_bg"></div>
+                                               <ul>
+                                                   <li><span><img src="assets/images/kycimg/munies.svg" alt="" class="img-fluid"></span>New Staking Tiers</li>
+                                                   <li><span><img src="assets/images/kycimg/munies.svg" alt="" class="img-fluid"></span>Launchpad v2</li>
+                                                   <li><span><img src="assets/images/kycimg/munies.svg" alt="" class="img-fluid"></span>New Reward Tiers</li>
+                                               </ul>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <div class="col-md-12">
+                                       <div class="roadmap_contents disable">
+                                           <h3>Q4 2023</h3>
+                                           <div class="roadmap_list_sect">
+                                               <div class="check_icon_bg"></div>
+                                               <ul>
+                                                   <li><span><img src="assets/images/kycimg/RMcheckicon.svg" alt="" class="img-fluid"></span>New Bonedrop Tokens</li>
+                                               </ul>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                        </div>
+                    </div>
 
-    }
-
-    initImg($('#zoom-marker-img'));
-
-    /******************** INIT ZoomMarker here *****************************/
-    $(document).ready(function () {
-
-        $('#zoom-marker-img').zoomMarker({
-            src: "img/map.jpg",
-            rate: 0.2,
-            width: 1000,
-            max: 3000,
-			
-            enable_canvas: true,
-            move_limit: true
-        });
-
-    })
-    /******************** INIT ZoomMarker here *****************************/
-
-</script>
-
+                    <div id="roadmap_v2_3" class="tabcontent animate_opacity">
+                        <div class="roadmap_v2_tab_content roadmap_v2_tab_content_3">
+                            <div class="roadmap_slick_slider_section">
+                               <div class="row m-0">
+                                   <div class="col-md-4">
+                                       <div class="roadmap_contents disable">
+                                           <h3>Q1 2024</h3>
+                                           <div class="roadmap_list_sect">
+                                               <div class="check_icon_bg"></div>
+                                               <ul>
+                                                   <li class="m-0"><span><img src="assets/images/kycimg/munies.svg" alt="" class="img-fluid"></span>Integration of Avalanche</li>
+                                                   <li><span><img src="assets/images/kycimg/munies.svg" alt="" class="img-fluid"></span>Contract Audit</li>
+                                               </ul>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                       <div class="roadmap_contents disable">
+                                           <h3>Q2 2024</h3>
+                                           <div class="roadmap_list_sect">
+                                               <div class="check_icon_bg"></div>
+                                               <ul>
+                                                   <li><span><img src="assets/images/kycimg/munies.svg" alt="" class="img-fluid"></span>Mobile app for iOS and Android</li>
+                                                   <li><span><img src="assets/images/kycimg/munies.svg" alt="" class="img-fluid"></span>Development of NFT Marketplace</li>
+                                               </ul>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                       <div class="roadmap_contents disable">
+                                           <h3>Q3 2024</h3>
+                                           <div class="roadmap_list_sect">
+                                               <div class="check_icon_bg"></div>
+                                               <ul>
+                                                   <li><span><img src="assets/images/kycimg/munies.svg" alt="" class="img-fluid"></span>Staking</li>
+                                               </ul>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="farme1"><img src="assets/images/bg/RoadMapV2Fram.png" alt="" class="img-fluid"></span>
+            <span class="farme2"><img src="assets/images/bg/RoadMapV2Frame2.png" alt="" class="img-fluid"></span>
+        </div>
+                </div>
+            </div>
+        </div>
+       
+        <!-- Footer Section Start -->
+                <div class="dogf-footer-section">
+                <div class="container">
+                    
+                    <div class="footer-mainmenu text-center mb-20">
+                        <ul>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Bscscan</a></li>
+                            <li><a href="">Contact</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="https://t.me/prayfordoge">Telegram</a></li>
+                        </ul>
+                    </div>
+                    <div class="copyright-area text-center mb-0">
+                        <a>hello@PrayFordoge</a>
+                    </div>
+                    <div class="copyright-area text-center mb-0">
+                        <div class="dsc mb-37 md-mb-25">Copyright © 2022. All Rights Reserved by 
+                            <a target="_blank" class="bone" href="index.php.html">PFD</a>
+                        </div>
+                    </div>
+                    <div class="scrollup text-center">
+                        
+                    </div>
+                </div>
+        </div>        </div>
+        <!-- Meta Mask Connect -->
+        <script src="assets/js/web3.min.js"></script>
+        <script src="assets/js/metamask.js"></script>
+        <!-- modernizr js -->
+        <script src="assets/js/modernizr-2.8.3.min.js"></script>
+        <!-- jquery latest version -->
+        <script src="assets/js/jquery.min.js"></script>
+        <!-- Bootstrap v4.4.1 js -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- popup.min js -->
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <!-- imagesloaded.pkgd.min js -->
+        <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+        <!-- wow js -->
+        <script src="assets/js/wow.min.js"></script>
+        <!-- jquery counterup js -->
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <!-- counter top js -->
+        <script src="assets/js/waypoints.min.js"></script>
+        <!-- owl.carousel js -->
+        <script src="assets/js/owl.carousel.min.js"></script>
+        <!-- plugins js -->
+        <script src="assets/js/plugins.js"></script>
+        <!-- Time Counter js -->
+        <script src="assets/js/time-counter.js"></script>
+        <!-- slickSlider js -->
+        <script src="assets/js/slick.min.js"></script>
+        <script src="assets/js/metamaskhandler.js"></script> 
+         
+        <!-- main js -->
+        <script src="assets/js/main.js"></script>
+         <!-- home2 js -->
+         <script src="assets/js/custom/home2.js"></script>    
+    </body>
 </html>
